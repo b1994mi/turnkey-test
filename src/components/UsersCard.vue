@@ -1,17 +1,16 @@
 <template>
-  <div>
-    <div v-if="isLoading" class="d-flex justify-content-center">
+  <div class="p-2">
+    <div
+      v-if="isLoading"
+      style="height: calc(95vh)"
+      class="d-flex justify-content-center align-items-center"
+    >
       <div class="spinner-border" role="status">
         <span class="visually-hidden">Loading...</span>
       </div>
     </div>
-    <div v-else>
-      <div
-        v-for="user in users"
-        :key="user.email"
-        class="card"
-        style="width: 18rem"
-      >
+    <div v-else class="d-flex flex-wrap">
+      <div v-for="user in users" :key="user.email" class="card card-user m-3">
         <img :src="user.picture" class="card-img-top" alt="..." />
         <div class="card-body">
           <h5 class="card-title">{{ user.name }}</h5>
@@ -59,3 +58,9 @@ export default {
   },
 };
 </script>
+
+<style>
+.card-user {
+  flex: 0 1 18rem;
+}
+</style>
