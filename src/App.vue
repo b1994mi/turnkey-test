@@ -1,7 +1,11 @@
 <template>
-  <UsersCard msg="Hello Vue 3 + Vite" />
+  <users-card />
 </template>
 
-<script setup>
+<script>
 import UsersCard from "./components/UsersCard.vue";
+
+export default {
+  components: { UsersCard },
+};
 </script>
