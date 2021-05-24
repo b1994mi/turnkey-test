@@ -73,7 +73,6 @@ export default {
   },
   watch: {
     page: function (newValue) {
-      console.log(this.itemsToBeShown);
       const index = newValue * this.itemsToBeShown - this.itemsToBeShown;
       this.usersToBeShown = this.users.filter((e, i) => {
         return i >= index && i < index + this.itemsToBeShown;
